@@ -13,10 +13,14 @@ class mahasiswa extends CI_Controller
 	{	
 		$data['judul'] = 'Halaman mahasiswa';
 		    $data['mahasiswa']=$this->Mahasiswa_model->getAllMahasiswa();
-        $this->form_validation->set_rules('kode','kode','required');
-        $this->form_validation->set_rules('matakuliah','matakuliah','required');
-        $this->form_validation->set_rules('sks','sks','required');
-        $this->form_validation->set_rules('semester','semester','required');
+            if($this->input->post('keyword'))
+                $data['mahasiswa']= $this->Mahasiswa_model->cariDataMahasiswa();
+            
+		    $data['jurusan']=$this->Mahasiswa_model->getAllJurusan();
+        $this->form_validation->set_rules('kode','Kode','required|is_unique[mahasiswa.kode]');
+        $this->form_validation->set_rules('matakuliah','Matakuliah','required|is_unique[mahasiswa.matakuliah]');
+        $this->form_validation->set_rules('sks','Sks','required');
+        $this->form_validation->set_rules('semester','Semester','required');
         $this->form_validation->set_rules('jurusan','jurusan','required');
         if($this->form_validation->run()==false){    
     	$this->load->view('templates/header',$data);
@@ -28,12 +32,25 @@ class mahasiswa extends CI_Controller
                 'matakuliah' => $this->input->post('matakuliah'),
                 'sks' => $this->input->post('sks'),
                 'semester' => $this->input->post('semester'),
-                'jurusan' => $this->input->post('jurusan')
+                'jurusan' => $this->input->post('jurusan'), 
                   
             ];
             $this->db->insert('mahasiswa',$data);
+            $this->session->set_flashdata('flash','ditambahkan');
             redirect('mahasiswa');
         }
     }
 
+    public function Ubah()
+    {
+        $this->Mahasiswa_model->ubahDataMahasiswa($id);
+        $this->session->set_flashdata('flash','diubah');
+        redirect('mahasiswa');
+    }
+    public function hapus($id)
+    {
+        $this->Mahasiswa_model->hapusDataMahasiswa($id);
+        $this->session->set_flashdata('flash','dihapus');
+        redirect('mahasiswa');
+    }
  }
