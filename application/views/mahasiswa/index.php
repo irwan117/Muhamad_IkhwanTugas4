@@ -3,12 +3,12 @@
 		<div class="col mt-4">
 
 		<!--awal validasi eror-->
-		<?php if(validation_errors()):?>
+		<!-- <?php if(validation_errors()):?>
 		<div class="alert alert-danger" role="alert">
 			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			<?= validation_errors();?>
 		</div>
-		<?php endif;?>
+		<?php endif;?> -->
 		<!--akhir validasi eror-->
 
 			<!-- Button trigger modal -->

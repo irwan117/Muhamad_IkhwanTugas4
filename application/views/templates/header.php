@@ -24,7 +24,10 @@
           <a class="nav-link" href="mahasiswa">Mahasiswa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="dosen">Dosen</a>
+          <a class="nav-link" href="<?= base_url('Dosen')?>">Dosen</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= base_url('admin/Login') ?>">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
