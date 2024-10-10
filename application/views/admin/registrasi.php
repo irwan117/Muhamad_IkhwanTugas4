@@ -46,7 +46,7 @@
         </div>
       </form>
 
-      <a href="<?= base_url('admin/registrasi') ?>" class="text-center">Back To Login</a>
+      <a href="<?= base_url('admin/login') ?>" class="text-center">Back To Login</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->

@@ -17,5 +17,5 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?= base_url('assets/')?>/index2.html"><b>Admin</b>LTE</a>
+    <b href="<?= base_url('assets/')?>/index2.html">Admin</b>
   </div>

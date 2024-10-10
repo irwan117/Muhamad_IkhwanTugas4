@@ -37,9 +37,11 @@ class Dosen extends CI_Controller
         }
     
 
-    public function Ubah()
+    public function ubah($id)
     {
-        $data['judul']= 'Form Ubah Data Dosen';      
+        $data['judul']= 'Form Ubah Data Dosen';  
+        $data['dosen']= $this->Dosen_model->getDosenById($id); 
+
 		$this->form_validation->set_rules('nip','Nip','required|is_unique[Dosen.nip]');
         $this->form_validation->set_rules('namadosen','Namadosen','required|is_unique[Dosen.namadosen]'); 
         if($this->form_validation->run()==false){    
@@ -47,8 +49,8 @@ class Dosen extends CI_Controller
             $this->load->view('dosen/ubah',$data);
             $this->load->view('templates/footer');
         }else {      
-        $this->Dosen_model->ubahDataDosen($id);
-        $this->session->set_flashdata('flash','diubah');
+        $this->Dosen_model->ubahDataDosen();
+        $this->session->set_flashdata('flash', 'diubah');
         redirect('dosen');
         }
     }

@@ -23,7 +23,7 @@
             $this->db->insert('dosen',$data);
         }
 
-        public function getDosenById()
+        public function getDosenById($id)
         {
             return $this->db->get_where('dosen',['id' =>$id])->row_array();
         }
@@ -45,7 +45,7 @@
 
             ];
             $this->db->where('id', $this->input->post('id'));
-            $this->db->update('dosen',$data);
+            $this->db->update('dosen', $data);
         }
         
         public function hapusDataDosen($id)

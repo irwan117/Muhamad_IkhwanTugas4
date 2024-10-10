@@ -36,7 +36,7 @@
         <a href="<?= base_url('beranda') ?>">Back To Beranda</a>
       </p>
       <p class="mb-0">
-        <a href="<?= base_url('admin/registrasi') ?>" class="text-center">Register a new membership</a>
+        <a href="<?= base_url('admin/registrasi') ?>" class="text-center">Register</a>
       </p>
     </div>
     <!-- /.login-card-body -->

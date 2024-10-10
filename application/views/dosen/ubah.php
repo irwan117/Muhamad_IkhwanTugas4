@@ -3,22 +3,23 @@
         <div class="col-md-5">
         <div class="card">
             <div class="card-header">
-             From Tambah Data Dosen
+             From Ubah Data Dosen
             </div>
             <div class="card-body"> 
                 <form action="" method="post">
+                    <input type="hidden" name="id" value="<?=$dosen['id']; ?>">
             <div class="form-grub">
                 <label for="nip">NIP</label>
-                <input type="text" class="form-control" id="nip" name="nip">
+                <input type="text" class="form-control" value="<?=$dosen['id']; ?>" id="nip" name="nip">
                 <small class="form-text text-danger"><?= form_error('nip')?></small>
             </div>
             <div class="form-grub">
                 <label for="namadosen">NAMA DOSEN</label>
-                <input type="text" class="form-control" id="namadosen" name="namadosen">
+                <input type="text" class="form-control" value="<?=$dosen['namadosen']; ?>" id="namadosen" name="namadosen">
                 <small class="form-text text-danger"><?= form_error('namadosen')?></small>
             </div>
             <a href="<?= base_url(); ?>dosen" class="btn btn-secondary">Close</a>
-            <button type="submit" name="tambah" class="btn btn-primary float-end">Tambah</button>
+            <button type="submit" name="ubah" class="btn btn-primary float-end">Ubah</button>
             </form>
         </div>
     </div>
